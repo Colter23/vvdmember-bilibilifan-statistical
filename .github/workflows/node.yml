@@ -24,10 +24,15 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
-    - name: count
+    - run: node ./index.js
+    - name: Commit
       run: |
-        node ./index.js
+        git config --global user.email "13864833022@163.com"
+        git config --global user.name "Colter23"
         git add *
-        git commit -m "updata data"
-        git remote add origin git@github.com:Colter23/vvdmember-bilibilifan-statistical.git
-        git push origin master
+        git commit -m "updata data" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
