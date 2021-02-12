@@ -27,12 +27,12 @@ jobs:
     - run: node ./index.js
     - name: Commit
       run: |
-        git config --global user.email "13864833022@163.com"
-        git config --global user.name "Colter23"
-        git add *
+        git config --local user.email "13864833022@163.com"
+        git config --local user.name "bot"
+        git add .
         git commit -m "updata data" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+#    - name: Push changes
+#      uses: ad-m/github-push-action@master
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
 
