@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: "0 * */1 * *"  # scheduled at 06:00 (UTC+8) everyday
+    - cron: "0 * * * *"  # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
 
 env:
@@ -24,4 +24,10 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
-    - run: node ./index.js
+    - name: count
+      run: |
+        node ./index.js
+        git add *
+        git commit -m "updata data"
+        git remote add origin git@github.com:Colter23/vvdmember-bilibilifan-statistical.git
+        git push origin master
