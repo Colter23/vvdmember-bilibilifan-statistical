@@ -4,8 +4,8 @@
 name: Node.js CI
 
 on:
-  schedule:
-    - cron: "0 * * * *"  # scheduled at 06:00 (UTC+8) everyday
+  #schedule:
+   # - cron: "0 * * * *"  # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
 
 env:
